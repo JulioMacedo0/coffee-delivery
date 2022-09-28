@@ -6,6 +6,7 @@ export const Header = () => {
     <S.Container>
    <S.HeaderContainer>
     <img src={logo} alt="logo" />
+
     <div>
       <S.LocaleDiv>
       <MapPin size={22} weight="fill" />

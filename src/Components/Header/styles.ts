@@ -18,7 +18,7 @@ div  {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 2rem;
+  height: 2.375rem;
 }
 `
 
@@ -26,7 +26,7 @@ export const ButtonChart = styled.button`
 display: flex;
 align-items: center;
 justify-content: center;
-border-radius: 8px;
+border-radius: 6px;
 margin-left: 0.75rem;
 background-color: ${(props) => props.theme['yellow-light']};
 color: ${(props) => props.theme['yellow-dark']};
@@ -38,7 +38,7 @@ border: none;
 
 
 export const LocaleDiv = styled.div`
-border-radius: 8px;
+border-radius: 6px;
 padding: 0.5rem;
 color: ${(props) => props.theme['purple-darl']};
 background-color: ${(props) => props.theme['purple-light']};;
