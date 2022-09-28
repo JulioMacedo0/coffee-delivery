@@ -43,7 +43,10 @@ padding: 0.5rem;
 color: ${(props) => props.theme['purple-darl']};
 background-color: ${(props) => props.theme['purple-light']};;
 p {
-  font-weight: bold;
+   font-family: 'Roboto', sans-serif;
+  font-size: 0.875rem;
+  line-height: 1.1375rem;
+  font-weight: 400;
 }
 
 svg {
