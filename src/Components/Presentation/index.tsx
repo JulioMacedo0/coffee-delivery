@@ -36,7 +36,7 @@ export const Presentation = () => {
                 color="bate-text"
               />
               <CardInfo
-                icon={<Coffee size={16} weight="fill" />}
+                icon={<Coffee size={16.6} weight="fill" />}
                 paragraph="O café chega fresquinho até você"
                 color="purple"
               />
