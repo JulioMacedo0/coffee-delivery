@@ -9,7 +9,6 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
   width: 100%;
   max-width: 90rem;
-  height: 6.5rem;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -142,7 +141,7 @@ export const P = styled.p`
   line-height: 130%;
 `;
 
-export const ResumePricingContent = styled.div`
+export const ResumePricingItem = styled.div`
   border-top-left-radius: 6px;
   border-top-right-radius: 32px;
   border-bottom-left-radius: 32px;
@@ -154,4 +153,65 @@ export const ResumePricingContent = styled.div`
   padding: 2.5rem;
   width: 28rem;
   height: 31.125rem;
+`;
+
+export const PricingContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+`;
+
+export const SpanBase = styled.span`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  color: ${(props) => props.theme["bate-text"]};
+  line-height: 130%;
+`;
+
+export const SpanTitle = styled(SpanBase)`
+  font-size: 0.875rem;
+`;
+
+export const SpanTralling = styled(SpanBase)`
+  font-size: 1rem;
+`;
+
+export const SpanStrongTitle = styled.span`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 130%;
+  color: ${(props) => props.theme["bate-subtitle"]};
+`;
+
+export const TotalItems = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Delivery = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const Total = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+export const ConfirmButton = styled.button`
+  width: 100%;
+  border: none;
+  background-color: ${(props) => props.theme["yellow"]};
+  height: 2.875rem;
+  color: ${(props) => props.theme["white"]};
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 0.875rem;
+  line-height: 160%;
+  text-transform: uppercase;
+  border-radius: 6px;
 `;

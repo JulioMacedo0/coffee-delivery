@@ -73,10 +73,28 @@ export const Payment = () => {
 
         <div>
           <S.Title>Cafés selecionados</S.Title>
-          <S.ResumePricingContent>
+          <S.ResumePricingItem>
             <CartItem />
             <CartItem />
-          </S.ResumePricingContent>
+
+            <S.PricingContainer>
+              <S.TotalItems>
+                <S.SpanTitle>Total de itens</S.SpanTitle>
+                <S.SpanTralling>R$ 29,70</S.SpanTralling>
+              </S.TotalItems>
+
+              <S.Delivery>
+                <S.SpanTitle>Entrega</S.SpanTitle>
+                <S.SpanTralling>R$ 3,50</S.SpanTralling>
+              </S.Delivery>
+
+              <S.Total>
+                <S.SpanStrongTitle>Total</S.SpanStrongTitle>
+                <S.SpanStrongTitle>R$ 33,20</S.SpanStrongTitle>
+              </S.Total>
+            </S.PricingContainer>
+            <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
+          </S.ResumePricingItem>
         </div>
       </S.ContentContainer>
     </S.Container>
