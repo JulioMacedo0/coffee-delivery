@@ -1,5 +1,13 @@
 import styled from "styled-components";
 
+export const Wrapper = styled.div``;
+
+export const Divider = styled.div`
+  margin: 22px 0;
+  width: 100%;
+  border-bottom: 1px solid ${(props) => props.theme["base-button"]};
+`;
+
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
