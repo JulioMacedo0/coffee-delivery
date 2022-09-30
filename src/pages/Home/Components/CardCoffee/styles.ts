@@ -20,10 +20,6 @@ export const Container = styled.div`
     height: 7.5rem;
   }
 
-  > div {
-    margin-bottom: 1rem;
-  }
-
   h3 {
     color: ${(props) => props.theme["bate-subtitle"]};
     font-family: "Baloo 2";
@@ -52,7 +48,7 @@ export const Container = styled.div`
     justify-content: space-around;
     align-items: center;
 
-    > button {
+    > a {
       border-radius: 6px;
       border: none;
       display: flex;
@@ -70,11 +66,17 @@ export const Container = styled.div`
   }
 `;
 
+export const TasteContainer = styled.span`
+  display: flex;
+  gap: 0.156rem;
+  margin-bottom: 1rem;
+`;
+
 export const TasteSpan = styled.span`
   background-color: ${(props) => props.theme["yellow-light"]};
   color: ${(props) => props.theme["yellow-dark"]};
   padding: 0.25rem 0.5rem;
-  border-radius: 8px;
+  border-radius: 100px;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
