@@ -7,9 +7,15 @@ export const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
 }
 
+html {
+  overflow: auto;
+  scrollbar-gutter: stable;
+}
+
 body {
     background-color: ${(props) => props.theme["background"]};
     -webkit-font-smoothing: antialiased;
+
 }
 
 button {
