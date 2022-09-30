@@ -47,7 +47,7 @@ export const PricingContainer = styled.div`
     font-weight: 700;
     font-size: 1rem;
     line-height: 130%;
-    color: ${(props) => props.theme["bate-subtitle"]};
+    color: ${(props) => props.theme["bate-text"]};
   }
 `;
 
