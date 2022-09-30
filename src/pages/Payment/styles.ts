@@ -143,6 +143,10 @@ export const P = styled.p`
 `;
 
 export const ResumePricingContent = styled.div`
+  border-top-left-radius: 6px;
+  border-top-right-radius: 32px;
+  border-bottom-left-radius: 32px;
+  border-bottom-right-radius: 6px;
   display: flex;
   flex-direction: column;
   gap: 2rem;

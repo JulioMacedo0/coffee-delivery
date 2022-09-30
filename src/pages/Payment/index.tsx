@@ -6,6 +6,8 @@ import {
   Money,
 } from "phosphor-react";
 import { CardPayment } from "./Components/CardPayment";
+import { CartItem } from "./Components/CartItem";
+
 import * as S from "./styles";
 
 export const Payment = () => {
@@ -71,7 +73,10 @@ export const Payment = () => {
 
         <div>
           <S.Title>Cafés selecionados</S.Title>
-          <S.ResumePricingContent>test</S.ResumePricingContent>
+          <S.ResumePricingContent>
+            <CartItem />
+            <CartItem />
+          </S.ResumePricingContent>
         </div>
       </S.ContentContainer>
     </S.Container>
