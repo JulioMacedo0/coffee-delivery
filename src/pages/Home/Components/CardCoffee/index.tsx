@@ -1,5 +1,5 @@
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
-import cafe from "../../assets/ExpressoTradicional.svg";
+import cafe from "../../../../assets/ExpressoTradicional.svg";
 import * as S from "./styles";
 export const CardCoffee = () => {
   return (

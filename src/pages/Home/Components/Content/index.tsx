@@ -1,7 +1,7 @@
 import { CardCoffee } from "../CardCoffee";
 import * as S from "./styles";
 
-export const Coffees = () => {
+export const Content = () => {
   return (
     <S.Container>
       <S.CoffesContainer>

@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.header`
   display: flex;
   width: 100%;
   justify-content: center;
 `;
-export const HeaderContainer = styled.header`
+export const HeaderContainer = styled.div`
   width: 100%;
   max-width: 90rem;
   height: 6.5rem;
