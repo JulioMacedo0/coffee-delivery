@@ -1,10 +1,11 @@
 import { Content } from "./Components/Content";
-import { Presentation } from "./Components/Presentation";
+
+import { ProductPresentation } from "./Components/ProductPresentation";
 import * as S from "./styles";
 export const Home = () => {
   return (
     <>
-      <Presentation />
+      <ProductPresentation />
       <Content />
     </>
   );
