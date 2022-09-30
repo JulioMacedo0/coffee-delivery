@@ -104,10 +104,8 @@ export const ChosePaymentContainer = styled.div`
   padding: 2.5rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 2rem;
   width: 100%;
-  height: 19.9375rem;
-
   header {
     div {
       display: flex;
@@ -117,6 +115,11 @@ export const ChosePaymentContainer = styled.div`
       color: ${(props) => props.theme["purple"]};
     }
   }
+`;
+
+export const PaymentCardsContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const Span = styled.span`

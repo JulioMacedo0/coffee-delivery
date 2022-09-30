@@ -1,4 +1,11 @@
-import { CurrencyDollar, MapPinLine } from "phosphor-react";
+import {
+  Bank,
+  CreditCard,
+  CurrencyDollar,
+  MapPinLine,
+  Money,
+} from "phosphor-react";
+import { CardPayment } from "./Components/CardPayment";
 import * as S from "./styles";
 
 export const Payment = () => {
@@ -45,6 +52,20 @@ export const Payment = () => {
                 O pagamento é feito na entrega. Escolha a forma que deseja pagar
               </S.P>
             </header>
+            <S.PaymentCardsContainer>
+              <CardPayment
+                PaymentMethod="cartão de crédito"
+                icon={<CreditCard size={16} />}
+              />
+              <CardPayment
+                PaymentMethod="cartão de débito"
+                icon={<Bank size={16} />}
+              />
+              <CardPayment
+                PaymentMethod="dinheiro"
+                icon={<Money size={16} />}
+              />
+            </S.PaymentCardsContainer>
           </S.ChosePaymentContainer>
         </div>
 
