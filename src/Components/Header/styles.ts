@@ -19,23 +19,23 @@ export const HeaderContainer = styled.div`
     align-items: center;
     justify-content: center;
     height: 2.375rem;
-  }
-`;
 
-export const ButtonChart = styled.button`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 6px;
-  margin-left: 0.75rem;
-  background-color: ${(props) => props.theme["yellow-light"]};
-  color: ${(props) => props.theme["yellow-dark"]};
-  height: 2.375rem;
-  width: 2.375rem;
-  border: none;
-  transition: background-color 0.5s;
-  :hover {
-    background-color: ${(props) => props.theme["yellow"]};
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 6px;
+      margin-left: 0.75rem;
+      background-color: ${(props) => props.theme["yellow-light"]};
+      color: ${(props) => props.theme["yellow-dark"]};
+      height: 2.375rem;
+      width: 2.375rem;
+      border: none;
+      transition: background-color 0.5s;
+      :hover {
+        background-color: ${(props) => props.theme["yellow"]};
+      }
+    }
   }
 `;
 
