@@ -21,4 +21,13 @@ export const IconContainer = styled.div<InfoContainerProps>`
   color: ${(props) => props.theme.white};
   background-color: ${(props) => props.theme[props.color]};
 `;
-export const ContentContainer = styled.div``;
+export const ContentContainer = styled.div`
+  p {
+    font-family: "Roboto";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 130%;
+    color: ${(props) => props.theme["bate-text"]};
+  }
+`;
