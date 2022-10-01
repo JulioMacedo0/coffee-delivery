@@ -12,11 +12,13 @@ export const PaymentConfirmed = () => {
               Agora é só aguarda que logo o café chegará até você
             </S.Paragraph>
           </S.Header>
-          <S.CardDelivery>
-            <CardInfoDelivery CardType="Delivery" color="purple" />
-            <CardInfoDelivery CardType="Prevision" color="yellow" />
-            <CardInfoDelivery CardType="Payment" color="yellow-dark" />
-          </S.CardDelivery>
+          <S.CardDeliveryGradient>
+            <S.CardDelivery>
+              <CardInfoDelivery CardType="Delivery" color="purple" />
+              <CardInfoDelivery CardType="Prevision" color="yellow" />
+              <CardInfoDelivery CardType="Payment" color="yellow-dark" />
+            </S.CardDelivery>
+          </S.CardDeliveryGradient>
         </S.ResumeDeliveryContainer>
         <img src={ilustration} alt="" />
       </S.ContentContainer>

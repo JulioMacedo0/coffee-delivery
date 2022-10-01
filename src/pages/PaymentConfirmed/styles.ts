@@ -46,6 +46,16 @@ export const Paragraph = styled.p`
   line-height: 130%;
 `;
 
+export const CardDeliveryGradient = styled.div`
+  padding: 1px;
+  border-radius: 6px 36px;
+  background: linear-gradient(
+    300deg,
+    rgba(128, 71, 248, 1) 0%,
+    rgba(219, 172, 44, 1) 100%
+  );
+`;
+
 export const CardDelivery = styled.div`
   display: flex;
   width: 32.875rem;
@@ -54,5 +64,5 @@ export const CardDelivery = styled.div`
   gap: 2rem;
   padding: 2.5rem;
   border-radius: 6px 36px;
-  border: 1px solid red;
+  background-color: ${(props) => props.theme.white};
 `;
