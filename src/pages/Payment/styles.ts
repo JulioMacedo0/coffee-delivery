@@ -152,7 +152,7 @@ export const ResumePricingItem = styled.div`
   background-color: ${(props) => props.theme["base-card"]};
   padding: 2.5rem;
   width: 28rem;
-  height: 31.125rem;
+  // height: 31.125rem;
 `;
 
 export const PricingContainer = styled.div`
