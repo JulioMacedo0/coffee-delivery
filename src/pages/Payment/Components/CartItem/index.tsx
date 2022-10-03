@@ -11,9 +11,9 @@ export const CartItem = () => {
             <S.TitleProduct>Expresso Tradicional</S.TitleProduct>
             <S.ButtonsCotainer>
               <S.ButtonCount>
-                <Minus />
+                <Minus size={15} />
                 <span>{1}</span>
-                <Plus size={14} />
+                <Plus size={15} />
               </S.ButtonCount>
               <S.DeleteButton>
                 <Trash size={14} />

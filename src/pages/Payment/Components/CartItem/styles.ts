@@ -70,8 +70,14 @@ export const BaseButton = styled.button`
   }
 `;
 
-export const ButtonCount = styled(BaseButton)`
+export const ButtonCount = styled.div`
+  align-items: center;
+  border-radius: 6px;
+  justify-content: space-around;
+  display: flex;
   width: 4.5rem;
+  height: 2rem;
+  border: none;
   > span {
     font-family: "Roboto";
     font-style: normal;
@@ -80,11 +86,20 @@ export const ButtonCount = styled(BaseButton)`
     line-height: 130%;
     color: ${(props) => props.theme["base-title"]};
   }
+
+  > svg {
+    cursor: pointer;
+    color: ${(props) => props.theme["purple"]};
+
+    :hover {
+      color: ${(props) => props.theme["purple-darl"]};
+    }
+  }
 `;
 
 export const DeleteButton = styled(BaseButton)`
   width: 5.6875rem;
-
+  transition: background-color 0.5s;
   > span {
     font-family: "Roboto";
     font-style: normal;
@@ -93,5 +108,9 @@ export const DeleteButton = styled(BaseButton)`
     line-height: 160%;
     color: ${(props) => props.theme["bate-text"]};
     text-transform: uppercase;
+  }
+
+  :hover {
+    background-color: ${(props) => props.theme["base-hover"]};
   }
 `;
