@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.li`
   border-top-left-radius: 6px;
   border-top-right-radius: 32px;
   border-bottom-left-radius: 32px;

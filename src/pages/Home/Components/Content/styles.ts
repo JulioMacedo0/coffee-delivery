@@ -27,7 +27,7 @@ export const CoffesContainer = styled.div`
   }
 `;
 
-export const GridContainer = styled.div`
+export const GridContainer = styled.ul`
   display: grid;
   grid-template-columns: repeat(4, 16rem);
   gap: 2rem 2.5rem;
