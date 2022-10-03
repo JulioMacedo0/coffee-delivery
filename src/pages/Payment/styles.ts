@@ -74,6 +74,9 @@ export const BaseInput = styled.input`
   border: 1px solid ${(props) => props.theme["base-button"]};
   background-color: ${(props) => props.theme["base-input"]};
   border-radius: 4px;
+  :focus {
+    border: 1px solid ${(props) => props.theme["yellow-dark"]};
+  }
 `;
 
 export const CepInput = styled(BaseInput)`
