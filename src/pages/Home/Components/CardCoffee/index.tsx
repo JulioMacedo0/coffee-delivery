@@ -20,11 +20,11 @@ export const CardCoffee = () => {
         </S.PricingContainer>
         <S.CounterItem>
           <button>
-            <Minus size={14} weight="fill" />
+            <Minus size={15} weight="fill" />
           </button>
           1
           <button>
-            <Plus size={14} weight="fill" />
+            <Plus size={15} weight="fill" />
           </button>
         </S.CounterItem>
         <NavLink to="payment">

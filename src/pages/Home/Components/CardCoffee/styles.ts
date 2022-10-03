@@ -128,7 +128,7 @@ export const CounterItem = styled.span`
   align-items: center;
   background-color: ${(props) => props.theme["base-button"]};
   color: ${(props) => props.theme["base-title"]};
-  gap: 4px;
+  gap: 0.5rem;
 
   button {
     border: none;
