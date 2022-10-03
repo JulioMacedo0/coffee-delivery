@@ -9,6 +9,11 @@ export const Container = styled.div`
   padding: 1rem;
   gap: 0.75rem;
   background-color: ${(props) => props.theme["base-button"]};
+  transition: background-color 0.5s;
+  :hover {
+    background-color: ${(props) => props.theme["base-hover"]};
+  }
+  cursor: pointer;
   span {
     color: ${(props) => props.theme["purple"]};
   }
