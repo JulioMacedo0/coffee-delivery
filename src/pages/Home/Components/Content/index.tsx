@@ -26,18 +26,16 @@ export const Content = () => {
       <S.CoffesContainer>
         <h2>Nossos cafés</h2>
         <S.GridContainer>
-          {Coffes.map((coffe) => {
-            return (
-              <CardCoffee
-                key={coffe.id}
-                description={coffe.description}
-                img={coffe.photo}
-                name={coffe.name}
-                price={coffe.price}
-                tags={coffe.tags}
-              />
-            );
-          })}
+          {Coffes.map((coffe) => (
+            <CardCoffee
+              key={coffe.id}
+              description={coffe.description}
+              img={coffe.photo}
+              name={coffe.name}
+              price={coffe.price}
+              tags={coffe.tags}
+            />
+          ))}
         </S.GridContainer>
       </S.CoffesContainer>
     </S.Container>
