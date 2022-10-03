@@ -12,7 +12,7 @@ export const Header = () => {
         <div>
           <S.LocaleDiv>
             <MapPin size={22} weight="fill" />
-            <p>Tocantinopolis, TO</p>
+            <p>Bauru, SP</p>
           </S.LocaleDiv>
 
           <NavLink to="/payment">
