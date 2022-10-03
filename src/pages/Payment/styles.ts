@@ -85,7 +85,7 @@ export const NumberInput = styled(BaseInput)`
   width: 12.5rem;
 `;
 export const ComplementInput = styled(BaseInput)`
-  width: 100%;
+  width: 21.75rem;
 `;
 export const DistrictInput = styled(BaseInput)`
   width: 12.5rem;
