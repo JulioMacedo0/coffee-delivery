@@ -1,8 +1,8 @@
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
 import { NavLink } from "react-router-dom";
-import cafe from "../../../../assets/ExpressoTradicional.svg";
+
 import * as S from "./styles";
-console.log(cafe);
+
 interface CardCoffeProps {
   img: string;
   tags: [];
