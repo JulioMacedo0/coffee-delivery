@@ -1,0 +1,11 @@
+{
+  "products": [
+    {"id": 1,
+    "photo":"../../../../assets/ExpressoTradicional.svg" ,
+    "tags": ["tradicional"],
+    "name": "Expresso Tradicional",
+    "description": "O tradicional café feito com água quente e grãos moídos",
+    "price" : 9.90
+    }
+  ]
+}
