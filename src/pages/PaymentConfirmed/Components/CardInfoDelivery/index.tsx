@@ -17,9 +17,9 @@ export const CardInfoDelivery = ({
         </S.IconContainer>
         <S.ContentContainer>
           <p>
-            Entrega em <strong>Rua Rio Grande do Sul, 940</strong>
+            Entrega em <strong>Rua São paulo, 512</strong>
           </p>
-          <p>Tocantiopolis, TO</p>
+          <p>Bauru, SP</p>
         </S.ContentContainer>
       </S.Container>
     );
