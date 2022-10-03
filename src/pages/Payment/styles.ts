@@ -214,4 +214,9 @@ export const ConfirmButton = styled.button`
   line-height: 160%;
   text-transform: uppercase;
   border-radius: 6px;
+  transition: background-color 0.5s;
+
+  :hover {
+    background-color: ${(props) => props.theme["yellow-dark"]};
+  }
 `;
