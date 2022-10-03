@@ -35,7 +35,7 @@
     "description": "Bebida preparada com café expresso e cubos de gelo",
     "price" : 4.50
     },
-    {"id": 5,
+    {"id": 6,
     "photo":"/src/assets/Latte.svg" ,
     "tags": ["tradicional" , "com leite"],
     "name": "Latte",
@@ -91,7 +91,7 @@
     "description": "Bebida preparada com grãos de café árabe e especiarias",
     "price" : 21.50
     },
-    {"id": 13,
+    {"id": 14,
     "photo":"/src/assets/Irlandes.svg" ,
     "tags": ["especial" ,"alcoólico" ],
     "name": "Árabe",
