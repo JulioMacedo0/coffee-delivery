@@ -28,7 +28,8 @@ export const Content = () => {
         <S.GridContainer>
           {Coffes.map((coffe) => (
             <CardCoffee
-              key={coffe.id}
+              id={coffe.id}
+              key={coffe.id.toString()}
               description={coffe.description}
               img={coffe.photo}
               name={coffe.name}
