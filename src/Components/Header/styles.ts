@@ -5,7 +5,11 @@ export const Container = styled.header`
   width: 100%;
   justify-content: center;
 `;
-export const HeaderContainer = styled.div`
+
+interface HeaderContainerProps {
+  existItems: boolean;
+}
+export const HeaderContainer = styled.div<HeaderContainerProps>`
   width: 100%;
   max-width: 90rem;
   height: 6.5rem;
@@ -34,6 +38,26 @@ export const HeaderContainer = styled.div`
       transition: background-color 0.5s;
       :hover {
         background-color: ${(props) => props.theme["yellow"]};
+      }
+
+      svg {
+        position: relative;
+        left: ${(props) => (props.existItems ? "-8px" : "0px")};
+      }
+
+      span {
+        position: relative;
+        top: -20px;
+        right: -25px;
+        background-color: ${(props) => props.theme["yellow-dark"]};
+        width: 1.125rem;
+        height: 1.125rem;
+        color: ${(props) => props.theme.white};
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
       }
     }
   }
