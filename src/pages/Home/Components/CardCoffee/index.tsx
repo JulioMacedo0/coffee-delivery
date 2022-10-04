@@ -8,7 +8,7 @@ interface CardCoffeProps {
   tags: [];
   name: string;
   description: string;
-  price: number;
+  price: string;
 }
 
 export const CardCoffee = ({

@@ -32,7 +32,7 @@ export const Content = () => {
               description={coffe.description}
               img={coffe.photo}
               name={coffe.name}
-              price={coffe.price}
+              price={coffe.price.toFixed(2)}
               tags={coffe.tags}
             />
           ))}
