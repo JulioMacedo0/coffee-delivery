@@ -1,6 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
 import { Header } from "./Components/Header";
+import { ChartItemsContextProvider } from "./context/ChartItemsContext";
 import { Router } from "./Router";
 
 import { GlobalStyle } from "./styles/global";
@@ -11,8 +12,10 @@ export function App() {
     <ThemeProvider theme={defaultTheme}>
       <GlobalStyle />
       <BrowserRouter>
-        <Header />
-        <Router />
+        <ChartItemsContextProvider>
+          <Header />
+          <Router />
+        </ChartItemsContextProvider>
       </BrowserRouter>
     </ThemeProvider>
   );
