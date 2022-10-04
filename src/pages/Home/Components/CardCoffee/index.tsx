@@ -1,6 +1,7 @@
 import { Minus, Plus, ShoppingCartSimple } from "phosphor-react";
-import { useEffect, useState } from "react";
+import { useContext } from "react";
 import { NavLink } from "react-router-dom";
+import { ChartItemsContext } from "../../../../context/ChartItemsContext";
 
 import * as S from "./styles";
 
@@ -21,66 +22,8 @@ export const CardCoffee = ({
   description,
   price,
 }: CardCoffeProps) => {
-  interface ChartItemType {
-    id: number;
-    name: string;
-    img: string;
-    price: string;
-    amount: number;
-  }
-
-  const [itemsChart, setItemsChart] = useState<ChartItemType[]>([]);
-
-  useEffect(() => {
-    const StotredItems = localStorage.getItem(
-      "@coffe-delivery:chart-items1.0.0"
-    );
-
-    if (StotredItems) {
-      setItemsChart(JSON.parse(StotredItems));
-    }
-  }, []);
-
-  function handlleAddProduct() {
-    const existProduct = itemsChart.find((item) => item.id == id);
-
-    if (existProduct) {
-      const newItems = itemsChart.map((item) => {
-        if (item.id == id) {
-          return { ...item, amount: item.amount + 1 };
-        } else {
-          return item;
-        }
-      });
-      localStorage.setItem(
-        "@coffe-delivery:chart-items1.0.0",
-        JSON.stringify(newItems)
-      );
-      setItemsChart(newItems);
-    } else {
-      const newItems = [...itemsChart, { id, name, img, price, amount: 1 }];
-      localStorage.setItem(
-        "@coffe-delivery:chart-items1.0.0",
-        JSON.stringify(newItems)
-      );
-      setItemsChart(newItems);
-    }
-  }
-
-  function handlleDecreaseProduct() {
-    const newItems = itemsChart.map((item) => {
-      if (item.id == id) {
-        return { ...item, amount: item.amount > 0 ? item.amount - 1 : 0 };
-      } else {
-        return item;
-      }
-    });
-    localStorage.setItem(
-      "@coffe-delivery:chart-items1.0.0",
-      JSON.stringify(newItems)
-    );
-    setItemsChart(newItems);
-  }
+  const { handlleAddProduct, itemsChart, handlleDecreaseProduct } =
+    useContext(ChartItemsContext);
 
   const amountItem = itemsChart.find((item) => item.id == id)?.amount || 0;
 
@@ -101,11 +44,11 @@ export const CardCoffee = ({
           <S.CurrencyType>R$ </S.CurrencyType> <S.Price>{price}</S.Price>
         </S.PricingContainer>
         <S.CounterItem>
-          <button onClick={() => handlleDecreaseProduct()}>
+          <button onClick={() => handlleDecreaseProduct(id)}>
             <Minus size={15} weight="fill" />
           </button>
           {amountItem}
-          <button onClick={() => handlleAddProduct()}>
+          <button onClick={() => handlleAddProduct(id, name, img, price)}>
             <Plus size={15} weight="fill" />
           </button>
         </S.CounterItem>
