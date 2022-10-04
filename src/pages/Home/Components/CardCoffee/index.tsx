@@ -41,45 +41,55 @@ export const CardCoffee = ({
     }
   }, []);
 
-  const AlreadyExists = itemsChart.length
-    ? itemsChart.map((item) => {
-        if (item.id == id) {
-          return true;
-        } else {
-          return false;
-        }
-      })
-    : false;
+  function handlleAddProduct() {
+    const existProduct = itemsChart.find((item) => item.id == id);
 
-  function HandlleAddProduct() {
-    if (AlreadyExists) {
-      console.log("valor ja existe");
+    if (existProduct) {
+      const newItems = itemsChart.map((item) => {
+        if (item.id == id) {
+          return { ...item, amount: item.amount + 1 };
+        } else {
+          return item;
+        }
+      });
+      localStorage.setItem(
+        "@coffe-delivery:chart-items1.0.0",
+        JSON.stringify(newItems)
+      );
+      setItemsChart(newItems);
     } else {
       const newItems = [...itemsChart, { id, name, img, price, amount: 1 }];
-      console.log(newItems);
+      localStorage.setItem(
+        "@coffe-delivery:chart-items1.0.0",
+        JSON.stringify(newItems)
+      );
       setItemsChart(newItems);
     }
-    console.log(itemsChart);
-    localStorage.setItem(
-      "@coffe-delivery:chart-items1.0.0",
-      JSON.stringify(itemsChart)
-    );
   }
 
-  const amountItem = itemsChart.length
-    ? itemsChart.map((item) => {
-        if (item.id == id) {
-          return item.amount;
-        }
-      })
-    : 0;
+  function handlleDecreaseProduct() {
+    const newItems = itemsChart.map((item) => {
+      if (item.id == id) {
+        return { ...item, amount: item.amount > 0 ? item.amount - 1 : 0 };
+      } else {
+        return item;
+      }
+    });
+    localStorage.setItem(
+      "@coffe-delivery:chart-items1.0.0",
+      JSON.stringify(newItems)
+    );
+    setItemsChart(newItems);
+  }
+
+  const amountItem = itemsChart.find((item) => item.id == id)?.amount || 0;
 
   return (
     <S.Container>
       <img src={img} alt="" />
       <S.TasteContainer>
         {tags.map((tag) => (
-          <S.TasteSpan>{tag}</S.TasteSpan>
+          <S.TasteSpan key={tag}>{tag}</S.TasteSpan>
         ))}
       </S.TasteContainer>
 
@@ -91,11 +101,11 @@ export const CardCoffee = ({
           <S.CurrencyType>R$ </S.CurrencyType> <S.Price>{price}</S.Price>
         </S.PricingContainer>
         <S.CounterItem>
-          <button>
+          <button onClick={() => handlleDecreaseProduct()}>
             <Minus size={15} weight="fill" />
           </button>
           {amountItem}
-          <button onClick={() => HandlleAddProduct()}>
+          <button onClick={() => handlleAddProduct()}>
             <Plus size={15} weight="fill" />
           </button>
         </S.CounterItem>
