@@ -4,6 +4,7 @@ import {
   CurrencyDollar,
   MapPinLine,
   Money,
+  SmileySad,
 } from "phosphor-react";
 import { useContext } from "react";
 import { ChartItemsContext } from "../../context/ChartItemsContext";
@@ -84,6 +85,8 @@ export const Payment = () => {
         <div>
           <S.Title>Cafés selecionados</S.Title>
           <S.ResumePricingItem>
+            {<S.Title>Seu carrinho de compras está vazio</S.Title>}
+            {<SmileySad size={52} />}
             <ul>
               {itemsChart.map((item) => {
                 return (

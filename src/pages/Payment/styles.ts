@@ -151,11 +151,16 @@ export const ResumePricingItem = styled.div`
   border-bottom-right-radius: 6px;
   display: flex;
   flex-direction: column;
+
+  text-align: center;
   gap: 2rem;
   background-color: ${(props) => props.theme["base-card"]};
   padding: 2.5rem;
   width: 28rem;
-  // height: 31.125rem;
+  svg {
+    margin: auto;
+    color: ${(props) => props.theme["yellow-dark"]};
+  }
 `;
 
 export const PricingContainer = styled.div`
