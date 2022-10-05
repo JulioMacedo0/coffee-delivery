@@ -23,6 +23,8 @@ export const IconContainer = styled.div<InfoContainerProps>`
 `;
 export const ContentContainer = styled.div`
   p {
+    display: flex;
+    gap: 4px;
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
@@ -30,4 +32,14 @@ export const ContentContainer = styled.div`
     line-height: 130%;
     color: ${(props) => props.theme["bate-text"]};
   }
+`;
+
+export const stateUpperCase = styled.p`
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 130%;
+  color: ${(props) => props.theme["bate-text"]};
+  text-transform: uppercase;
 `;

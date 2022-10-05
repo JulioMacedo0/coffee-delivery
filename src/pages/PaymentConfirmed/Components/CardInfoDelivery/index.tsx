@@ -1,5 +1,7 @@
 import * as S from "./styles";
 import { MapPin, Clock, CurrencyDollar } from "phosphor-react";
+import { useContext } from "react";
+import { ChartItemsContext } from "../../../../context/ChartItemsContext";
 interface CardInfoDeliveryProps {
   CardType: "Delivery" | "Prevision" | "Payment";
   color: "purple" | "yellow" | "yellow-dark";
@@ -9,6 +11,8 @@ export const CardInfoDelivery = ({
   CardType,
   color,
 }: CardInfoDeliveryProps) => {
+  const { street, houseNumber, city, state } = useContext(ChartItemsContext);
+
   if (CardType == "Delivery") {
     return (
       <S.Container>
@@ -17,9 +21,14 @@ export const CardInfoDelivery = ({
         </S.IconContainer>
         <S.ContentContainer>
           <p>
-            Entrega em <strong>Rua São paulo, 512</strong>
+            Entrega em
+            <strong>
+              {street}, {houseNumber}
+            </strong>
           </p>
-          <p>Bauru, SP</p>
+          <p>
+            {city},<S.stateUpperCase>{state}</S.stateUpperCase>
+          </p>
         </S.ContentContainer>
       </S.Container>
     );
