@@ -125,7 +125,10 @@ export const Payment = () => {
                 <S.SpanStrongTitle>R$ {total.toFixed(2)}</S.SpanStrongTitle>
               </S.Total>
             </S.PricingContainer>
-            <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
+
+            <NavLink to="/paymentConfirmed">
+              <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
+            </NavLink>
           </S.ResumePricingItem>
         </div>
       </S.ContentContainer>
