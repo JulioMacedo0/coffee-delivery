@@ -11,7 +11,7 @@ interface CartItemProps {
   price: string;
 }
 export const CartItem = ({ id, amount, img, price, name }: CartItemProps) => {
-  const { handlleAddProduct, handlleDecreaseProduct } =
+  const { handlleAddProduct, handlleDecreaseProduct, handdleDeleteProduct } =
     useContext(ChartItemsContext);
 
   return (
@@ -31,7 +31,7 @@ export const CartItem = ({ id, amount, img, price, name }: CartItemProps) => {
                   <Plus size={15} />
                 </button>
               </S.ButtonCount>
-              <S.DeleteButton>
+              <S.DeleteButton onClick={() => handdleDeleteProduct(id)}>
                 <Trash size={14} />
                 <span>remover</span>
               </S.DeleteButton>
