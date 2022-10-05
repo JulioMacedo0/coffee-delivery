@@ -22,6 +22,7 @@ export const Payment = () => {
 
   const deliveryPrice = 3.5;
   const total = totalItens + deliveryPrice;
+  const existItems = itemsChart.length > 0;
   return (
     <S.Container>
       <S.ContentContainer>
@@ -85,8 +86,10 @@ export const Payment = () => {
         <div>
           <S.Title>Cafés selecionados</S.Title>
           <S.ResumePricingItem>
-            {<S.Title>Seu carrinho de compras está vazio</S.Title>}
-            {<SmileySad size={52} />}
+            {!existItems && (
+              <S.Title>Seu carrinho de compras está vazio</S.Title>
+            )}
+            {!existItems && <SmileySad size={52} />}
             <ul>
               {itemsChart.map((item) => {
                 return (
