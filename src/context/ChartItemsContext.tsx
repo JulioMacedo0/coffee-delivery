@@ -72,14 +72,14 @@ export function ChartItemsContextProvider({
 
   function handlleDecreaseProduct(id: number) {
     const newItems = itemsChart
-      .filter((item) => item.amount - 1 > 0)
       .map((item) => {
         if (item.id == id) {
           return { ...item, amount: item.amount - 1 };
         } else {
           return item;
         }
-      });
+      })
+      .filter((item) => item.amount > 0);
     localStorage.setItem(
       "@coffe-delivery:chart-items1.0.0",
       JSON.stringify(newItems)
