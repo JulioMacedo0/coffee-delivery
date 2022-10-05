@@ -1,6 +1,8 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div``;
+export const Wrapper = styled.li`
+  list-style: none;
+`;
 
 export const Divider = styled.div`
   margin: 22px 0;
@@ -78,6 +80,20 @@ export const ButtonCount = styled.div`
   width: 4.5rem;
   height: 2rem;
   border: none;
+  background-color: ${(props) => props.theme["base-button"]};
+
+  > button {
+    background-color: ${(props) => props.theme["base-button"]};
+    border: none;
+    svg {
+      cursor: pointer;
+      color: ${(props) => props.theme["purple"]};
+
+      :hover {
+        color: ${(props) => props.theme["purple-darl"]};
+      }
+    }
+  }
   > span {
     font-family: "Roboto";
     font-style: normal;
@@ -85,15 +101,6 @@ export const ButtonCount = styled.div`
     font-size: 1rem;
     line-height: 130%;
     color: ${(props) => props.theme["base-title"]};
-  }
-
-  > svg {
-    cursor: pointer;
-    color: ${(props) => props.theme["purple"]};
-
-    :hover {
-      color: ${(props) => props.theme["purple-darl"]};
-    }
   }
 `;
 

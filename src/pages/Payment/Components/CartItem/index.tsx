@@ -1,19 +1,35 @@
 import * as S from "./styles";
 import { Minus, Plus, Trash } from "phosphor-react";
-import img from "../../../../assets/ExpressoTradicional.svg";
-export const CartItem = () => {
+import { useContext } from "react";
+import { ChartItemsContext } from "../../../../context/ChartItemsContext";
+
+interface CartItemProps {
+  amount: number;
+  id: number;
+  name: string;
+  img: string;
+  price: string;
+}
+export const CartItem = ({ id, amount, img, price, name }: CartItemProps) => {
+  const { handlleAddProduct, handlleDecreaseProduct } =
+    useContext(ChartItemsContext);
+
   return (
     <S.Wrapper>
       <S.Container>
         <S.ProductContainer>
           <img src={img} alt="" />
           <div>
-            <S.TitleProduct>Expresso Tradicional</S.TitleProduct>
+            <S.TitleProduct>{name}</S.TitleProduct>
             <S.ButtonsCotainer>
               <S.ButtonCount>
-                <Minus size={15} />
-                <span>{1}</span>
-                <Plus size={15} />
+                <button onClick={() => handlleDecreaseProduct(id)}>
+                  <Minus size={15} />
+                </button>
+                <span>{amount}</span>
+                <button onClick={() => handlleAddProduct(id, name, img, price)}>
+                  <Plus size={15} />
+                </button>
               </S.ButtonCount>
               <S.DeleteButton>
                 <Trash size={14} />
@@ -23,7 +39,7 @@ export const CartItem = () => {
           </div>
 
           <S.PricingContainer>
-            <span>R$ 9,90</span>
+            <span>R$ {price}</span>
           </S.PricingContainer>
         </S.ProductContainer>
       </S.Container>
