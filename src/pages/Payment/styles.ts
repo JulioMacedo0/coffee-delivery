@@ -157,7 +157,7 @@ export const ResumePricingItem = styled.div`
   background-color: ${(props) => props.theme["base-card"]};
   padding: 2.5rem;
   width: 28rem;
-  svg {
+  > svg {
     margin: auto;
     color: ${(props) => props.theme["yellow-dark"]};
   }
