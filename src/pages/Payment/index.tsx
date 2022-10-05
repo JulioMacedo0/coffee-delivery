@@ -15,7 +15,17 @@ import { CartItem } from "./Components/CartItem";
 import * as S from "./styles";
 
 export const Payment = () => {
-  const { itemsChart } = useContext(ChartItemsContext);
+  const {
+    itemsChart,
+    onChangeSetScreet,
+    onChangeSetHouseNumber,
+    onChangeSetCity,
+    onChangeSetState,
+    street,
+    houseNumber,
+    city,
+    state,
+  } = useContext(ChartItemsContext);
 
   const totalItens = itemsChart
     .map((item) => item.amount * parseFloat(item.price))
@@ -42,15 +52,33 @@ export const Payment = () => {
 
               <form action="">
                 <S.CepInput placeholder="CEP" />
-                <S.StreetInput placeholder="Rua" />
+                <S.StreetInput
+                  placeholder="Rua"
+                  value={street}
+                  onChange={(event) => onChangeSetScreet(event.target.value)}
+                />
                 <S.InputContainer>
-                  <S.NumberInput placeholder="Número" />
+                  <S.NumberInput
+                    placeholder="Número"
+                    value={houseNumber}
+                    onChange={(event) =>
+                      onChangeSetHouseNumber(event.target.value)
+                    }
+                  />
                   <S.ComplementInput placeholder="Complemento" />
                 </S.InputContainer>
                 <S.InputContainer>
                   <S.DistrictInput placeholder="Bairro" />
-                  <S.CityInput placeholder="Cidade" />
-                  <S.UfInput placeholder="UF" />
+                  <S.CityInput
+                    placeholder="Cidade"
+                    value={city}
+                    onChange={(event) => onChangeSetCity(event.target.value)}
+                  />
+                  <S.UfInput
+                    placeholder="UF"
+                    value={state}
+                    onChange={(event) => onChangeSetState(event.target.value)}
+                  />
                 </S.InputContainer>
               </form>
             </S.FormContainer>
