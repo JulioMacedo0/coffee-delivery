@@ -20,6 +20,7 @@ interface ChartItemsContextType {
     price: string
   ) => void;
   handlleDecreaseProduct: (id: number) => void;
+  handdleDeleteProduct: (id: number) => void;
 }
 
 export const ChartItemsContext = createContext({} as ChartItemsContextType);
@@ -87,12 +88,22 @@ export function ChartItemsContextProvider({
     setItemsChart(newItems);
   }
 
+  function handdleDeleteProduct(id: number) {
+    const newItems = itemsChart.filter((item) => item.id != id);
+    localStorage.setItem(
+      "@coffe-delivery:chart-items1.0.0",
+      JSON.stringify(newItems)
+    );
+    setItemsChart(newItems);
+  }
+
   return (
     <ChartItemsContext.Provider
       value={{
         itemsChart,
         handlleAddProduct,
         handlleDecreaseProduct,
+        handdleDeleteProduct,
       }}
     >
       {children}
