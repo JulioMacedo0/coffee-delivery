@@ -7,6 +7,7 @@ import {
   SmileySad,
 } from "phosphor-react";
 import { useContext } from "react";
+import { NavLink } from "react-router-dom";
 import { ChartItemsContext } from "../../context/ChartItemsContext";
 import { CardPayment } from "./Components/CardPayment";
 import { CartItem } from "./Components/CartItem";
@@ -87,7 +88,10 @@ export const Payment = () => {
           <S.Title>Cafés selecionados</S.Title>
           <S.ResumePricingItem>
             {!existItems && (
-              <S.Title>Seu carrinho de compras está vazio</S.Title>
+              <S.Title>
+                Seu carrinho de compras está vazio <br /> volte as{" "}
+                <NavLink to="/">compras.</NavLink>{" "}
+              </S.Title>
             )}
             {!existItems && <SmileySad size={52} />}
             <ul>

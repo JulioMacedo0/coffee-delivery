@@ -161,6 +161,14 @@ export const ResumePricingItem = styled.div`
     margin: auto;
     color: ${(props) => props.theme["yellow-dark"]};
   }
+
+  a {
+    transition: color 0.5s;
+    color: ${(props) => props.theme["yellow"]};
+    :hover {
+      color: ${(props) => props.theme["yellow-dark"]};
+    }
+  }
 `;
 
 export const PricingContainer = styled.div`
