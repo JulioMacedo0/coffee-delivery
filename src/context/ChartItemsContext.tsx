@@ -21,6 +21,14 @@ interface ChartItemsContextType {
   ) => void;
   handlleDecreaseProduct: (id: number) => void;
   handdleDeleteProduct: (id: number) => void;
+  onChangeSetScreet: (street: string) => void;
+  onChangeSetHouseNumber: (houseNumber: string) => void;
+  onChangeSetCity: (city: string) => void;
+  onChangeSetState: (state: string) => void;
+  street: string;
+  houseNumber: string;
+  city: string;
+  state: string;
 }
 
 export const ChartItemsContext = createContext({} as ChartItemsContextType);
@@ -29,6 +37,26 @@ export function ChartItemsContextProvider({
   children,
 }: ChartItemsContextProps) {
   const [itemsChart, setItemsChart] = useState<ChartItemType[]>([]);
+  const [street, setStreet] = useState("");
+  const [houseNumber, setHouseNumber] = useState("");
+  const [city, setCity] = useState("");
+  const [state, setState] = useState("");
+
+  function onChangeSetScreet(street: string) {
+    setStreet(street);
+  }
+
+  function onChangeSetHouseNumber(houseNumber: string) {
+    setHouseNumber(houseNumber);
+  }
+
+  function onChangeSetCity(city: string) {
+    setCity(city);
+  }
+
+  function onChangeSetState(state: string) {
+    setState(state);
+  }
 
   useEffect(() => {
     const StotredItems = localStorage.getItem(
@@ -104,6 +132,14 @@ export function ChartItemsContextProvider({
         handlleAddProduct,
         handlleDecreaseProduct,
         handdleDeleteProduct,
+        onChangeSetScreet,
+        onChangeSetHouseNumber,
+        onChangeSetCity,
+        onChangeSetState,
+        city,
+        houseNumber,
+        state,
+        street,
       }}
     >
       {children}
