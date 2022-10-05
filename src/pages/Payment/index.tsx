@@ -5,12 +5,22 @@ import {
   MapPinLine,
   Money,
 } from "phosphor-react";
+import { useContext } from "react";
+import { ChartItemsContext } from "../../context/ChartItemsContext";
 import { CardPayment } from "./Components/CardPayment";
 import { CartItem } from "./Components/CartItem";
 
 import * as S from "./styles";
 
 export const Payment = () => {
+  const { itemsChart } = useContext(ChartItemsContext);
+
+  const totalItens = itemsChart
+    .map((item) => item.amount * parseFloat(item.price))
+    .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
+  const deliveryPrice = 3.5;
+  const total = totalItens + deliveryPrice;
   return (
     <S.Container>
       <S.ContentContainer>
@@ -74,23 +84,35 @@ export const Payment = () => {
         <div>
           <S.Title>Cafés selecionados</S.Title>
           <S.ResumePricingItem>
-            <CartItem />
-            <CartItem />
+            <ul>
+              {itemsChart.map((item) => {
+                return (
+                  <CartItem
+                    key={item.id}
+                    amount={item.amount}
+                    id={item.id}
+                    img={item.img}
+                    name={item.name}
+                    price={item.price}
+                  />
+                );
+              })}
+            </ul>
 
             <S.PricingContainer>
               <S.TotalItems>
                 <S.SpanTitle>Total de itens</S.SpanTitle>
-                <S.SpanTralling>R$ 29,70</S.SpanTralling>
+                <S.SpanTralling>R$ {totalItens.toFixed(2)}</S.SpanTralling>
               </S.TotalItems>
 
               <S.Delivery>
                 <S.SpanTitle>Entrega</S.SpanTitle>
-                <S.SpanTralling>R$ 3,50</S.SpanTralling>
+                <S.SpanTralling>R$ {deliveryPrice.toFixed(2)}</S.SpanTralling>
               </S.Delivery>
 
               <S.Total>
                 <S.SpanStrongTitle>Total</S.SpanStrongTitle>
-                <S.SpanStrongTitle>R$ 33,20</S.SpanStrongTitle>
+                <S.SpanStrongTitle>R$ {total.toFixed(2)}</S.SpanStrongTitle>
               </S.Total>
             </S.PricingContainer>
             <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
