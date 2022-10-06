@@ -11,7 +11,8 @@ export const CardInfoDelivery = ({
   CardType,
   color,
 }: CardInfoDeliveryProps) => {
-  const { street, houseNumber, city, state } = useContext(ChartItemsContext);
+  const { street, houseNumber, city, state, paymentSelected } =
+    useContext(ChartItemsContext);
 
   if (CardType == "Delivery") {
     return (
@@ -55,7 +56,7 @@ export const CardInfoDelivery = ({
         <S.ContentContainer>
           <p>Pagamento na entrega</p>
           <p>
-            <strong>Cartão de Crédito</strong>
+            <strong>{paymentSelected}</strong>
           </p>
         </S.ContentContainer>
       </S.Container>
