@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const ContentContainer = styled.div`
   width: 100%;
   max-width: 90rem;
-  height: 34rem;
+  // height: 34rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -16,14 +16,14 @@ export const ContentContainer = styled.div`
 
   img {
     width: 29.75rem;
-    height: 22.5rem;
+    // height: 22.5rem;
   }
   > div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 22.5rem;
+    //  height: 22.5rem;
     width: 36.75rem;
   }
 
@@ -34,7 +34,7 @@ export const ContentContainer = styled.div`
     }
 
     > div {
-      height: 18.5rem;
+      //  height: 18.5rem;
       width: 32.75rem;
     }
   }
@@ -48,15 +48,18 @@ export const ContentContainer = styled.div`
     }
 
     > div {
-      height: 16.5rem;
+      //   height: 16.5rem;
       width: 30.75rem;
     }
   }
 
   @media (max-width: 415px) {
+    > div {
+      //   height: 20.5rem;
+    }
     img {
       width: 20.75rem;
-      height: 13.5rem;
+      //    height: 13.5rem;
     }
   }
 `;
@@ -102,6 +105,13 @@ export const InfoTopContainer = styled.div`
     }
   }
 
+  @media (max-width: 500px) {
+    padding: 0rem 1rem;
+    > h2 {
+      font-size: 1.5rem;
+    }
+  }
+
   @media (max-width: 415px) {
     padding: 0rem 5rem;
     > h2 {
@@ -111,24 +121,31 @@ export const InfoTopContainer = styled.div`
 `;
 
 export const InfoBottomContainer = styled.div`
-  height: 5.25rem;
+  //  height: 5.25rem;
   width: 35.4375rem;
   display: flex;
   justify-content: space-between;
 
   @media (max-width: 1365px) {
-    height: 5.25rem;
+    //  height: 5.25rem;
     width: 33.4375rem;
   }
   @media (max-width: 1235px) {
-    height: 5.25rem;
+    //  height: 5.25rem;
     width: 33.4375rem;
+  }
+
+  @media (max-width: 555px) {
+    flex-direction: column;
+    gap: 0.3125rem;
+    align-items: start;
+    // height: 5.25rem;
+    width: 19rem;
   }
 
   @media (max-width: 415px) {
     flex-direction: column;
-    height: 5.25rem;
-    width: 33.4375rem;
+    //   height: 5.25rem;
   }
 `;
 
@@ -136,4 +153,8 @@ export const CardInfoContainer = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  @media (max-width: 555px) {
+    gap: 0.3125rem;
+  }
 `;

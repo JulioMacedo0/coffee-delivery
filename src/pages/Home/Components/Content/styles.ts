@@ -54,7 +54,7 @@ export const GridContainer = styled.ul`
     justify-content: center;
   }
 
-  @media (max-width: 415px) {
+  @media (max-width: 570px) {
     grid-template-columns: repeat(1, 16rem);
     justify-content: center;
   }
