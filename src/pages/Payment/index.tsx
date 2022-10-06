@@ -25,6 +25,7 @@ export const Payment = () => {
     houseNumber,
     city,
     state,
+    paymentSelected,
   } = useContext(ChartItemsContext);
 
   const totalItens = itemsChart
@@ -97,14 +98,20 @@ export const Payment = () => {
             </header>
             <S.PaymentCardsContainer>
               <CardPayment
+                paymentSelected={paymentSelected}
+                payment="cartão de crédito"
                 PaymentMethod="cartão de crédito"
                 icon={<CreditCard size={16} />}
               />
               <CardPayment
+                paymentSelected={paymentSelected}
+                payment="cartão de débito"
                 PaymentMethod="cartão de débito"
                 icon={<Bank size={16} />}
               />
               <CardPayment
+                paymentSelected={paymentSelected}
+                payment="dinheiro"
                 PaymentMethod="dinheiro"
                 icon={<Money size={16} />}
               />
