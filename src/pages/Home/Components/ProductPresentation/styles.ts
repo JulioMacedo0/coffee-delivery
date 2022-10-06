@@ -122,6 +122,7 @@ export const InfoTopContainer = styled.div`
 
 export const InfoBottomContainer = styled.div`
   //  height: 5.25rem;
+
   width: 35.4375rem;
   display: flex;
   justify-content: space-between;
@@ -150,10 +151,11 @@ export const InfoBottomContainer = styled.div`
 `;
 
 export const CardInfoContainer = styled.div`
+  margin-top: 0.5rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
+  gap: 0.5rem;
   @media (max-width: 555px) {
     gap: 0.3125rem;
   }
