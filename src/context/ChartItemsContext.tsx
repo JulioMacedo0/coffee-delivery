@@ -13,18 +13,20 @@ interface ChartItemType {
 
 interface ChartItemsContextType {
   itemsChart: ChartItemType[];
-  handlleAddProduct: (
+  handleAddProduct: (
     id: number,
     name: string,
     img: string,
     price: string
   ) => void;
-  handlleDecreaseProduct: (id: number) => void;
-  handdleDeleteProduct: (id: number) => void;
+  handleDecreaseProduct: (id: number) => void;
+  handleDeleteProduct: (id: number) => void;
   onChangeSetScreet: (street: string) => void;
   onChangeSetHouseNumber: (houseNumber: string) => void;
   onChangeSetCity: (city: string) => void;
   onChangeSetState: (state: string) => void;
+  handleChangePaymentSlected: (payment: string) => void;
+  paymentSelected: string;
   street: string;
   houseNumber: string;
   city: string;
@@ -41,6 +43,7 @@ export function ChartItemsContextProvider({
   const [houseNumber, setHouseNumber] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
+  const [paymentSelected, setPaymentSeletected] = useState("");
 
   function onChangeSetScreet(street: string) {
     setStreet(street);
@@ -58,6 +61,11 @@ export function ChartItemsContextProvider({
     setState(state);
   }
 
+  function handleChangePaymentSlected(payment: string) {
+    setPaymentSeletected(payment);
+    console.log(payment);
+  }
+
   useEffect(() => {
     const StotredItems = localStorage.getItem(
       "@coffe-delivery:chart-items1.0.0"
@@ -68,7 +76,7 @@ export function ChartItemsContextProvider({
     }
   }, []);
 
-  function handlleAddProduct(
+  function handleAddProduct(
     id: number,
     name: string,
     img: string,
@@ -99,7 +107,7 @@ export function ChartItemsContextProvider({
     }
   }
 
-  function handlleDecreaseProduct(id: number) {
+  function handleDecreaseProduct(id: number) {
     const newItems = itemsChart
       .map((item) => {
         if (item.id == id) {
@@ -116,7 +124,7 @@ export function ChartItemsContextProvider({
     setItemsChart(newItems);
   }
 
-  function handdleDeleteProduct(id: number) {
+  function handleDeleteProduct(id: number) {
     const newItems = itemsChart.filter((item) => item.id != id);
     localStorage.setItem(
       "@coffe-delivery:chart-items1.0.0",
@@ -129,17 +137,19 @@ export function ChartItemsContextProvider({
     <ChartItemsContext.Provider
       value={{
         itemsChart,
-        handlleAddProduct,
-        handlleDecreaseProduct,
-        handdleDeleteProduct,
+        handleAddProduct,
+        handleDecreaseProduct,
+        handleDeleteProduct,
         onChangeSetScreet,
         onChangeSetHouseNumber,
         onChangeSetCity,
         onChangeSetState,
+        handleChangePaymentSlected,
         city,
         houseNumber,
         state,
         street,
+        paymentSelected,
       }}
     >
       {children}
