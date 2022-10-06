@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+interface ContainerProps {
+  paymentSelected: string;
+  PaymentMethod: string;
+}
+
+export const Container = styled.button<ContainerProps>`
+  border: 1px solid
+    ${(props) =>
+      props.paymentSelected == props.PaymentMethod
+        ? props.theme["purple"]
+        : props.theme["base-button"]};
   border-radius: 6px;
   display: flex;
   width: 11.166875rem;
@@ -8,7 +18,10 @@ export const Container = styled.div`
   justify-content: start;
   padding: 1rem;
   gap: 0.75rem;
-  background-color: ${(props) => props.theme["base-button"]};
+  background-color: ${(props) =>
+    props.paymentSelected == props.PaymentMethod
+      ? props.theme["purple-light"]
+      : props.theme["base-button"]};
   transition: background-color 0.5s;
   :hover {
     background-color: ${(props) => props.theme["base-hover"]};
