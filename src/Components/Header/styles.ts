@@ -61,6 +61,14 @@ export const HeaderContainer = styled.div<HeaderContainerProps>`
       }
     }
   }
+
+  @media (max-width: 700px) {
+    padding: 2rem 5rem;
+  }
+
+  @media (max-width: 415px) {
+    padding: 2rem 2rem;
+  }
 `;
 
 export const LocaleDiv = styled.div`

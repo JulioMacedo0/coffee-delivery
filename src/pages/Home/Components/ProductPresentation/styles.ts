@@ -26,6 +26,39 @@ export const ContentContainer = styled.div`
     height: 22.5rem;
     width: 36.75rem;
   }
+
+  @media (max-width: 1365px) {
+    img {
+      width: 25.75rem;
+      height: 18.5rem;
+    }
+
+    > div {
+      height: 18.5rem;
+      width: 32.75rem;
+    }
+  }
+
+  @media (max-width: 1235px) {
+    flex-direction: column-reverse;
+    gap: 0.5rem;
+    img {
+      width: 23.75rem;
+      height: 16.5rem;
+    }
+
+    > div {
+      height: 16.5rem;
+      width: 30.75rem;
+    }
+  }
+
+  @media (max-width: 415px) {
+    img {
+      width: 20.75rem;
+      height: 13.5rem;
+    }
+  }
 `;
 
 export const InfoTopContainer = styled.div`
@@ -41,9 +74,39 @@ export const InfoTopContainer = styled.div`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: 1.25rem;
     line-height: 130%;
     color: ${(props) => props.theme["bate-subtitle"]};
+  }
+
+  @media (max-width: 1365px) {
+    h1 {
+      font-size: 2.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+  }
+
+  @media (max-width: 1235px) {
+    h1 {
+      text-align: center;
+      font-size: 2rem;
+    }
+
+    p {
+      text-align: center;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 415px) {
+    padding: 0rem 5rem;
+    > h2 {
+      font-size: 1.5rem;
+    }
   }
 `;
 
@@ -52,6 +115,21 @@ export const InfoBottomContainer = styled.div`
   width: 35.4375rem;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 1365px) {
+    height: 5.25rem;
+    width: 33.4375rem;
+  }
+  @media (max-width: 1235px) {
+    height: 5.25rem;
+    width: 33.4375rem;
+  }
+
+  @media (max-width: 415px) {
+    flex-direction: column;
+    height: 5.25rem;
+    width: 33.4375rem;
+  }
 `;
 
 export const CardInfoContainer = styled.div`
