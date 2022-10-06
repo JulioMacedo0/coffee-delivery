@@ -24,7 +24,7 @@ export const CardInfoDelivery = ({
           <p>
             Entrega em
             <strong>
-              {street}, {houseNumber}
+              {street},{houseNumber}
             </strong>
           </p>
           <p>

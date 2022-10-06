@@ -28,9 +28,13 @@ export const ContentContainer = styled.div`
     font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 1rem;
     line-height: 130%;
     color: ${(props) => props.theme["bate-text"]};
+
+    @media (max-width: 880px) {
+      font-size: 0.94rem;
+    }
   }
 `;
 
@@ -38,8 +42,12 @@ export const stateUpperCase = styled.p`
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 130%;
   color: ${(props) => props.theme["bate-text"]};
   text-transform: uppercase;
+
+  @media (max-width: 880px) {
+    font-size: 0.94rem;
+  }
 `;
