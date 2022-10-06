@@ -22,7 +22,7 @@ export const CardCoffee = ({
   description,
   price,
 }: CardCoffeProps) => {
-  const { handlleAddProduct, itemsChart, handlleDecreaseProduct } =
+  const { handleAddProduct, itemsChart, handleDecreaseProduct } =
     useContext(ChartItemsContext);
 
   const amountItem = itemsChart.find((item) => item.id == id)?.amount || 0;
@@ -44,11 +44,11 @@ export const CardCoffee = ({
           <S.CurrencyType>R$ </S.CurrencyType> <S.Price>{price}</S.Price>
         </S.PricingContainer>
         <S.CounterItem>
-          <button onClick={() => handlleDecreaseProduct(id)}>
+          <button onClick={() => handleDecreaseProduct(id)}>
             <Minus size={15} weight="fill" />
           </button>
           {amountItem}
-          <button onClick={() => handlleAddProduct(id, name, img, price)}>
+          <button onClick={() => handleAddProduct(id, name, img, price)}>
             <Plus size={15} weight="fill" />
           </button>
         </S.CounterItem>
