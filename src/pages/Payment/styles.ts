@@ -221,7 +221,7 @@ export const ResumePricingItem = styled.div`
   border-bottom-right-radius: 6px;
   display: flex;
   flex-direction: column;
-
+  min-width: 17.5rem;
   text-align: center;
   gap: 2rem;
   background-color: ${(props) => props.theme["base-card"]};
