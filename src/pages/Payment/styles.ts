@@ -13,6 +13,11 @@ export const ContentContainer = styled.div`
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem 10rem;
+
+  @media (max-width: 1425px) {
+    align-items: center;
+    flex-direction: column;
+  }
 `;
 
 export const Title = styled.h2`
@@ -23,15 +28,21 @@ export const Title = styled.h2`
   line-height: 130%;
   color: ${(props) => props.theme["bate-subtitle"]};
   margin-bottom: 0.75rem;
+
+  @media (max-width: 1425px) {
+    margin-top: 0.5rem;
+    text-align: center;
+  }
 `;
 
 export const AddressContainer = styled.div`
   border-radius: 6px;
   display: flex;
+
   flex-direction: column;
   gap: 0.75rem;
-  width: 40rem;
-  height: 23.25rem;
+  // width: 40rem;
+  //  height: 23.25rem;
   margin-bottom: 0.75rem;
 `;
 
@@ -43,7 +54,7 @@ export const FormContainer = styled.div`
   border-radius: 6px;
   padding: 2.5rem;
   gap: 2rem;
-  height: 23.25rem;
+  //height: 23.25rem;
 
   header {
     div {
@@ -65,6 +76,10 @@ export const FormContainer = styled.div`
 export const InputContainer = styled.div`
   display: flex;
   gap: 0.75rem;
+
+  @media (max-width: 450px) {
+    flex-direction: column;
+  }
 `;
 
 export const BaseInput = styled.input`
@@ -81,23 +96,72 @@ export const BaseInput = styled.input`
 
 export const CepInput = styled(BaseInput)`
   width: 12.5rem;
+
+  @media (max-width: 900px) {
+    width: 18rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 
-export const StreetInput = styled(BaseInput)``;
+export const StreetInput = styled(BaseInput)`
+  @media (max-width: 900px) {
+    width: 18rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
+`;
 export const NumberInput = styled(BaseInput)`
   width: 12.5rem;
+  @media (max-width: 900px) {
+    width: 6.25rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 export const ComplementInput = styled(BaseInput)`
   width: 21.75rem;
+  @media (max-width: 900px) {
+    width: 10.875rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 export const DistrictInput = styled(BaseInput)`
   width: 12.5rem;
+  @media (max-width: 900px) {
+    width: 6.25rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 export const CityInput = styled(BaseInput)`
   width: 17.25rem;
+
+  @media (max-width: 900px) {
+    width: 10.875rem;
+  }
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 export const UfInput = styled(BaseInput)`
   width: 3.75rem;
+
+  @media (max-width: 450px) {
+    width: 12.5rem;
+  }
 `;
 
 export const ChosePaymentContainer = styled.div`
@@ -122,6 +186,12 @@ export const ChosePaymentContainer = styled.div`
 export const PaymentCardsContainer = styled.div`
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: 900px) {
+    align-items: center;
+    gap: 0.5rem;
+    flex-direction: column;
+  }
 `;
 
 export const Span = styled.span`
@@ -156,7 +226,15 @@ export const ResumePricingItem = styled.div`
   gap: 2rem;
   background-color: ${(props) => props.theme["base-card"]};
   padding: 2.5rem;
-  width: 28rem;
+  // width: 28rem;
+
+  @media (max-width: 420px) {
+    padding: 1.5rem;
+  }
+
+  @media (max-width: 375px) {
+    padding: 1rem;
+  }
   > svg {
     margin: auto;
     color: ${(props) => props.theme["yellow-dark"]};
