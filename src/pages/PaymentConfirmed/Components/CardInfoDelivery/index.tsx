@@ -56,7 +56,7 @@ export const CardInfoDelivery = ({
         <S.ContentContainer>
           <p>Pagamento na entrega</p>
           <p>
-            <strong>{paymentSelected}</strong>
+            <strong>{paymentSelected.data}</strong>
           </p>
         </S.ContentContainer>
       </S.Container>
