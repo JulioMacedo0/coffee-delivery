@@ -40,10 +40,6 @@ export const Payment = () => {
     .map((item) => item.amount * parseFloat(item.price))
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
-  useEffect(() => {
-    console.log(inputData);
-  }, [inputData]);
-
   const deliveryPrice = 3.5;
   const total = totalItens + deliveryPrice;
   const existItems = itemsChart.length > 0;
@@ -183,7 +179,7 @@ export const Payment = () => {
                 icon={<Money size={16} />}
               />
             </S.PaymentCardsContainer>
-            {!paymentSelected && (
+            {paymentSelected.isNotValid && (
               <S.Error>Escolha uma forma de pagamento</S.Error>
             )}
           </S.ChosePaymentContainer>
