@@ -10,7 +10,15 @@
 
 
 
-<p align="center">A simple challenge to train my skills, project in develop</p>
+<p align="center">A simple challenge to train my skills</p>
+
+## :hammer_and_wrench: **How to run project**
+
+<p align="center">git clone https://github.com/JulioMacedo0/coffee-delivery.git</p>
+<p align="center">yarn or npm install</p>
+<p align="center">run yarn dev , yarn api</p>
+<p align="center">or if you use npm </p>
+<p align="center">run npm dev , npm api</p>
 
 ## :camera: **Photos**
 
