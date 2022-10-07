@@ -6,8 +6,8 @@ import {
   Money,
   SmileySad,
 } from "phosphor-react";
-import { useContext } from "react";
-import { NavLink } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { NavLink, Navigate } from "react-router-dom";
 import { ChartItemsContext } from "../../context/ChartItemsContext";
 import { CardPayment } from "./Components/CardPayment";
 import { CartItem } from "./Components/CartItem";
@@ -17,12 +17,19 @@ import * as S from "./styles";
 export const Payment = () => {
   const {
     itemsChart,
+    onChangeSetCep,
     onChangeSetScreet,
     onChangeSetHouseNumber,
+    onChangeSetComplement,
+    onChangeSetDistrict,
     onChangeSetCity,
     onChangeSetState,
+    inputData,
+    cep,
     street,
     houseNumber,
+    complement,
+    district,
     city,
     state,
     paymentSelected,
@@ -31,6 +38,8 @@ export const Payment = () => {
   const totalItens = itemsChart
     .map((item) => item.amount * parseFloat(item.price))
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
+
+  useEffect(() => {}, [inputData]);
 
   const deliveryPrice = 3.5;
   const total = totalItens + deliveryPrice;
@@ -52,34 +61,75 @@ export const Payment = () => {
               </header>
 
               <form action="">
-                <S.CepInput placeholder="CEP" />
-                <S.StreetInput
-                  placeholder="Rua"
-                  value={street}
-                  onChange={(event) => onChangeSetScreet(event.target.value)}
-                />
-                <S.InputContainer>
-                  <S.NumberInput
-                    placeholder="Número"
-                    value={houseNumber}
-                    onChange={(event) =>
-                      onChangeSetHouseNumber(event.target.value)
-                    }
+                <S.WarpperInput>
+                  <S.CepInput
+                    placeholder="CEP"
+                    onChange={(event) => onChangeSetCep(event.target.value)}
+                    value={cep}
                   />
-                  <S.ComplementInput placeholder="Complemento" />
+                  <S.Error>Este campo deve ser preenchido</S.Error>
+                </S.WarpperInput>
+                <S.WarpperInput>
+                  <S.StreetInput
+                    placeholder="Rua"
+                    value={street}
+                    onChange={(event) => onChangeSetScreet(event.target.value)}
+                  />
+                  <S.Error>Este campo deve ser preenchido</S.Error>
+                </S.WarpperInput>
+                <S.InputContainer>
+                  <S.WarpperInput>
+                    <S.NumberInput
+                      placeholder="Número"
+                      value={houseNumber}
+                      onChange={(event) =>
+                        onChangeSetHouseNumber(event.target.value)
+                      }
+                    />
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  </S.WarpperInput>
+
+                  <S.WarpperInput>
+                    <S.ComplementInput
+                      placeholder="Complemento"
+                      onChange={(event) =>
+                        onChangeSetComplement(event.target.value)
+                      }
+                      value={complement}
+                    />
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  </S.WarpperInput>
                 </S.InputContainer>
+
                 <S.InputContainer>
-                  <S.DistrictInput placeholder="Bairro" />
-                  <S.CityInput
-                    placeholder="Cidade"
-                    value={city}
-                    onChange={(event) => onChangeSetCity(event.target.value)}
-                  />
-                  <S.UfInput
-                    placeholder="UF"
-                    value={state}
-                    onChange={(event) => onChangeSetState(event.target.value)}
-                  />
+                  <S.WarpperInput>
+                    <S.DistrictInput
+                      placeholder="Bairro"
+                      onChange={(event) =>
+                        onChangeSetDistrict(event.target.value)
+                      }
+                      value={district}
+                    />
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  </S.WarpperInput>
+
+                  <S.WarpperInput>
+                    <S.CityInput
+                      placeholder="Cidade"
+                      value={city}
+                      onChange={(event) => onChangeSetCity(event.target.value)}
+                    />
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  </S.WarpperInput>
+
+                  <S.WarpperInput>
+                    <S.UfInput
+                      placeholder="UF"
+                      value={state}
+                      onChange={(event) => onChangeSetState(event.target.value)}
+                    />
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  </S.WarpperInput>
                 </S.InputContainer>
               </form>
             </S.FormContainer>
@@ -161,9 +211,7 @@ export const Payment = () => {
               </S.Total>
             </S.PricingContainer>
 
-            <NavLink to="/paymentConfirmed">
-              <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
-            </NavLink>
+            <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
           </S.ResumePricingItem>
         </div>
       </S.ContentContainer>

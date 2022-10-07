@@ -38,7 +38,7 @@ export const Title = styled.h2`
 export const AddressContainer = styled.div`
   border-radius: 6px;
   display: flex;
-
+  max-width: 40rem;
   flex-direction: column;
   gap: 0.75rem;
   // width: 40rem;
@@ -77,7 +77,7 @@ export const InputContainer = styled.div`
   display: flex;
   gap: 0.75rem;
 
-  @media (max-width: 450px) {
+  @media (max-width: 500px) {
     flex-direction: column;
   }
 `;
@@ -107,6 +107,7 @@ export const CepInput = styled(BaseInput)`
 `;
 
 export const StreetInput = styled(BaseInput)`
+  width: 100%;
   @media (max-width: 900px) {
     width: 18rem;
   }
@@ -120,6 +121,9 @@ export const NumberInput = styled(BaseInput)`
   @media (max-width: 900px) {
     width: 6.25rem;
   }
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
 
   @media (max-width: 450px) {
     width: 12.5rem;
@@ -130,7 +134,9 @@ export const ComplementInput = styled(BaseInput)`
   @media (max-width: 900px) {
     width: 10.875rem;
   }
-
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
   @media (max-width: 450px) {
     width: 12.5rem;
   }
@@ -140,7 +146,9 @@ export const DistrictInput = styled(BaseInput)`
   @media (max-width: 900px) {
     width: 6.25rem;
   }
-
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
   @media (max-width: 450px) {
     width: 12.5rem;
   }
@@ -151,6 +159,9 @@ export const CityInput = styled(BaseInput)`
   @media (max-width: 900px) {
     width: 10.875rem;
   }
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
 
   @media (max-width: 450px) {
     width: 12.5rem;
@@ -159,6 +170,9 @@ export const CityInput = styled(BaseInput)`
 export const UfInput = styled(BaseInput)`
   width: 3.75rem;
 
+  @media (max-width: 500px) {
+    width: 18rem;
+  }
   @media (max-width: 450px) {
     width: 12.5rem;
   }
@@ -314,3 +328,14 @@ export const ConfirmButton = styled.button`
     background-color: ${(props) => props.theme["yellow-dark"]};
   }
 `;
+
+export const Error = styled(P)`
+  margin: 0;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  line-height: normal;
+  color: red;
+  width: 100%;
+`;
+
+export const WarpperInput = styled.div``;
