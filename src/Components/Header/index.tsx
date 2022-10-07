@@ -7,7 +7,9 @@ import { useContext } from "react";
 
 export const Header = () => {
   const { itemsChart } = useContext(ChartItemsContext);
-
+  const amaountItems = itemsChart
+    .map((item) => item.amount)
+    .reduce((previousValue, currentValue) => previousValue + currentValue);
   return (
     <S.Container>
       <S.HeaderContainer existItems={itemsChart.length > 0}>
@@ -21,7 +23,7 @@ export const Header = () => {
           </S.LocaleDiv>
 
           <NavLink to="/payment">
-            {itemsChart.length > 0 && <span>{itemsChart.length}</span>}
+            {itemsChart.length > 0 && <span>{amaountItems}</span>}
             <ShoppingCart size={22} weight="fill" />
           </NavLink>
         </div>
