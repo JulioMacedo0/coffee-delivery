@@ -195,6 +195,11 @@ export const ChosePaymentContainer = styled.div`
       color: ${(props) => props.theme["purple"]};
     }
   }
+
+  > p {
+    text-align: center;
+    font-size: 0.8rem;
+  }
 `;
 
 export const PaymentCardsContainer = styled.div`

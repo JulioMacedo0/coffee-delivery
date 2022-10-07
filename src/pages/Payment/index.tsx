@@ -16,7 +16,7 @@ import * as S from "./styles";
 
 export const Payment = () => {
   const {
-    itemsChart,
+    handleFormValidation,
     onChangeSetCep,
     onChangeSetScreet,
     onChangeSetHouseNumber,
@@ -24,6 +24,7 @@ export const Payment = () => {
     onChangeSetDistrict,
     onChangeSetCity,
     onChangeSetState,
+    itemsChart,
     inputData,
     cep,
     street,
@@ -39,7 +40,9 @@ export const Payment = () => {
     .map((item) => item.amount * parseFloat(item.price))
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
 
-  useEffect(() => {}, [inputData]);
+  useEffect(() => {
+    console.log(inputData);
+  }, [inputData]);
 
   const deliveryPrice = 3.5;
   const total = totalItens + deliveryPrice;
@@ -67,7 +70,9 @@ export const Payment = () => {
                     onChange={(event) => onChangeSetCep(event.target.value)}
                     value={cep}
                   />
-                  <S.Error>Este campo deve ser preenchido</S.Error>
+                  {inputData.cep.isNotValid && (
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  )}
                 </S.WarpperInput>
                 <S.WarpperInput>
                   <S.StreetInput
@@ -75,7 +80,9 @@ export const Payment = () => {
                     value={street}
                     onChange={(event) => onChangeSetScreet(event.target.value)}
                   />
-                  <S.Error>Este campo deve ser preenchido</S.Error>
+                  {inputData.street.isNotValid && (
+                    <S.Error>Este campo deve ser preenchido</S.Error>
+                  )}
                 </S.WarpperInput>
                 <S.InputContainer>
                   <S.WarpperInput>
@@ -86,7 +93,9 @@ export const Payment = () => {
                         onChangeSetHouseNumber(event.target.value)
                       }
                     />
-                    <S.Error>Este campo deve ser preenchido</S.Error>
+                    {inputData.houseNumber.isNotValid && (
+                      <S.Error>Este campo deve ser preenchido</S.Error>
+                    )}
                   </S.WarpperInput>
 
                   <S.WarpperInput>
@@ -97,7 +106,9 @@ export const Payment = () => {
                       }
                       value={complement}
                     />
-                    <S.Error>Este campo deve ser preenchido</S.Error>
+                    {inputData.complement.isNotValid && (
+                      <S.Error>Este campo deve ser preenchido</S.Error>
+                    )}
                   </S.WarpperInput>
                 </S.InputContainer>
 
@@ -110,7 +121,9 @@ export const Payment = () => {
                       }
                       value={district}
                     />
-                    <S.Error>Este campo deve ser preenchido</S.Error>
+                    {inputData.district.isNotValid && (
+                      <S.Error>Este campo deve ser preenchido</S.Error>
+                    )}
                   </S.WarpperInput>
 
                   <S.WarpperInput>
@@ -119,7 +132,9 @@ export const Payment = () => {
                       value={city}
                       onChange={(event) => onChangeSetCity(event.target.value)}
                     />
-                    <S.Error>Este campo deve ser preenchido</S.Error>
+                    {inputData.city.isNotValid && (
+                      <S.Error>Este campo deve ser preenchido</S.Error>
+                    )}
                   </S.WarpperInput>
 
                   <S.WarpperInput>
@@ -128,7 +143,9 @@ export const Payment = () => {
                       value={state}
                       onChange={(event) => onChangeSetState(event.target.value)}
                     />
-                    <S.Error>Este campo deve ser preenchido</S.Error>
+                    {inputData.state.isNotValid && (
+                      <S.Error>Este campo deve ser preenchido</S.Error>
+                    )}
                   </S.WarpperInput>
                 </S.InputContainer>
               </form>
@@ -166,6 +183,9 @@ export const Payment = () => {
                 icon={<Money size={16} />}
               />
             </S.PaymentCardsContainer>
+            {!paymentSelected && (
+              <S.Error>Escolha uma forma de pagamento</S.Error>
+            )}
           </S.ChosePaymentContainer>
         </div>
 
@@ -211,7 +231,9 @@ export const Payment = () => {
               </S.Total>
             </S.PricingContainer>
 
-            <S.ConfirmButton>confirmar pedido</S.ConfirmButton>
+            <S.ConfirmButton onClick={() => handleFormValidation()}>
+              confirmar pedido
+            </S.ConfirmButton>
           </S.ResumePricingItem>
         </div>
       </S.ContentContainer>
