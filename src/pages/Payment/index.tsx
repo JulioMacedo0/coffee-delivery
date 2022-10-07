@@ -7,7 +7,7 @@ import {
   SmileySad,
 } from "phosphor-react";
 import { useContext, useEffect, useState } from "react";
-import { NavLink, Navigate } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { ChartItemsContext } from "../../context/ChartItemsContext";
 import { CardPayment } from "./Components/CardPayment";
 import { CartItem } from "./Components/CartItem";
@@ -35,7 +35,7 @@ export const Payment = () => {
     state,
     paymentSelected,
   } = useContext(ChartItemsContext);
-
+  const navigate = useNavigate();
   const totalItens = itemsChart
     .map((item) => item.amount * parseFloat(item.price))
     .reduce((previousValue, currentValue) => previousValue + currentValue, 0);
@@ -227,7 +227,14 @@ export const Payment = () => {
               </S.Total>
             </S.PricingContainer>
 
-            <S.ConfirmButton onClick={() => handleFormValidation()}>
+            <S.ConfirmButton
+              onClick={async () => {
+                const validation = await handleFormValidation();
+                if (validation) {
+                  navigate("/paymentConfirmed");
+                }
+              }}
+            >
               confirmar pedido
             </S.ConfirmButton>
           </S.ResumePricingItem>
