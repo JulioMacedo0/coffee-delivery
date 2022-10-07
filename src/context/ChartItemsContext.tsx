@@ -1,4 +1,5 @@
 import { createContext, ReactNode, useEffect, useState } from "react";
+import { redirect } from "react-router-dom";
 
 interface ChartItemsContextProps {
   children: ReactNode;
@@ -55,7 +56,7 @@ interface ChartItemsContextType {
     img: string,
     price: string
   ) => void;
-  handleFormValidation: () => void;
+  handleFormValidation: () => boolean;
   handleDecreaseProduct: (id: number) => void;
   handleDeleteProduct: (id: number) => void;
   onChangeSetCep: (cep: string) => void;
@@ -201,9 +202,12 @@ export function ChartItemsContextProvider({
       objData.district.data &&
       objData.houseNumber.data &&
       objData.state.data &&
-      objData.street.data
+      objData.street.data &&
+      paymentSelected.data
     ) {
-      console.log("todos os campos foram preenchidos");
+      return true;
+    } else {
+      return false;
     }
   }
 
