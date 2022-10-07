@@ -1,11 +1,14 @@
 import { useContext } from "react";
-import { ChartItemsContext } from "../../../../context/ChartItemsContext";
+import {
+  ChartItemsContext,
+  PaymentSelectedType,
+} from "../../../../context/ChartItemsContext";
 import * as S from "./styles";
 
 interface CardPaymentProps {
   PaymentMethod: string;
   icon: React.ReactNode;
-  paymentSelected: string;
+  paymentSelected: PaymentSelectedType;
   payment: string;
 }
 export const CardPayment = ({

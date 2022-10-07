@@ -1,14 +1,15 @@
 import styled from "styled-components";
+import { PaymentSelectedType } from "../../../../context/ChartItemsContext";
 
 interface ContainerProps {
-  paymentSelected: string;
+  paymentSelected: PaymentSelectedType;
   PaymentMethod: string;
 }
 
 export const Container = styled.button<ContainerProps>`
   border: 1px solid
     ${(props) =>
-      props.paymentSelected == props.PaymentMethod
+      props.paymentSelected.data == props.PaymentMethod
         ? props.theme["purple"]
         : props.theme["base-button"]};
   border-radius: 6px;
@@ -19,7 +20,7 @@ export const Container = styled.button<ContainerProps>`
   padding: 1rem;
   gap: 0.75rem;
   background-color: ${(props) =>
-    props.paymentSelected == props.PaymentMethod
+    props.paymentSelected.data == props.PaymentMethod
       ? props.theme["purple-light"]
       : props.theme["base-button"]};
   transition: background-color 0.5s;
