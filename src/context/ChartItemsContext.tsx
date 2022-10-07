@@ -149,39 +149,50 @@ export function ChartItemsContextProvider({
     const objData = {
       cep: {
         data: cep,
-        isNotValid: cep ? true : false,
+        isNotValid: !cep ? true : false,
       },
       street: {
         data: street,
-        isNotValid: street ? true : false,
+        isNotValid: !street ? true : false,
       },
       houseNumber: {
         data: houseNumber,
-        isNotValid: houseNumber ? true : false,
+        isNotValid: !houseNumber ? true : false,
       },
       complement: {
         data: complement,
-        isNotValid: complement ? true : false,
+        isNotValid: !complement ? true : false,
       },
       district: {
         data: district,
-        isNotValid: district ? true : false,
+        isNotValid: !district ? true : false,
       },
       city: {
         data: city,
-        isNotValid: city ? true : false,
+        isNotValid: !city ? true : false,
       },
       state: {
         data: state,
-        isNotValid: state ? true : false,
+        isNotValid: !state ? true : false,
       },
     };
     setInputData(objData);
+
+    if (
+      objData.cep.data &&
+      objData.city.data &&
+      objData.complement.data &&
+      objData.district.data &&
+      objData.houseNumber.data &&
+      objData.state.data &&
+      objData.street.data
+    ) {
+      console.log("todos os campos foram preenchidos");
+    }
   }
 
   function handleChangePaymentSlected(payment: string) {
     setPaymentSeletected(payment);
-    console.log(payment);
   }
 
   function handleAddProduct(
