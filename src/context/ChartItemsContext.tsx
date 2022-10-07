@@ -11,6 +11,11 @@ interface ChartItemType {
   amount: number;
 }
 
+export interface PaymentSelectedType {
+  data: string;
+  isNotValid: boolean;
+}
+
 interface FromDataType {
   cep: {
     data: string;
@@ -62,7 +67,7 @@ interface ChartItemsContextType {
   onChangeSetState: (state: string) => void;
   handleChangePaymentSlected: (payment: string) => void;
   inputData: FromDataType;
-  paymentSelected: string;
+  paymentSelected: PaymentSelectedType;
   cep: string;
   street: string;
   houseNumber: string;
@@ -85,7 +90,12 @@ export function ChartItemsContextProvider({
   const [district, setDistric] = useState("");
   const [city, setCity] = useState("");
   const [state, setState] = useState("");
-  const [paymentSelected, setPaymentSeletected] = useState("");
+  const [paymentSelected, setPaymentSeletected] = useState<PaymentSelectedType>(
+    {
+      data: "",
+      isNotValid: false,
+    }
+  );
   const [inputData, setInputData] = useState<FromDataType>({
     cep: {
       data: "",
@@ -177,7 +187,13 @@ export function ChartItemsContextProvider({
       },
     };
     setInputData(objData);
-
+    if (!paymentSelected.data) {
+      const objPayment = {
+        data: "",
+        isNotValid: true,
+      };
+      setPaymentSeletected(objPayment);
+    }
     if (
       objData.cep.data &&
       objData.city.data &&
@@ -192,7 +208,11 @@ export function ChartItemsContextProvider({
   }
 
   function handleChangePaymentSlected(payment: string) {
-    setPaymentSeletected(payment);
+    const objPayment = {
+      data: payment,
+      isNotValid: payment ? false : true,
+    };
+    setPaymentSeletected(objPayment);
   }
 
   function handleAddProduct(
