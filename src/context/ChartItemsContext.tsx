@@ -14,31 +14,31 @@ interface ChartItemType {
 interface FromDataType {
   cep: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   street: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   houseNumber: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   complement: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   district: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   city: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
   state: {
     data: string;
-    isValid: boolean;
+    isNotValid: boolean;
   };
 }
 
@@ -89,31 +89,31 @@ export function ChartItemsContextProvider({
   const [inputData, setInputData] = useState<FromDataType>({
     cep: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     street: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     houseNumber: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     complement: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     district: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     city: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
     state: {
       data: "",
-      isValid: false,
+      isNotValid: false,
     },
   });
 
@@ -149,31 +149,31 @@ export function ChartItemsContextProvider({
     const objData = {
       cep: {
         data: cep,
-        isValid: cep ? true : false,
+        isNotValid: cep ? true : false,
       },
       street: {
         data: street,
-        isValid: street ? true : false,
+        isNotValid: street ? true : false,
       },
       houseNumber: {
         data: houseNumber,
-        isValid: houseNumber ? true : false,
+        isNotValid: houseNumber ? true : false,
       },
       complement: {
         data: complement,
-        isValid: complement ? true : false,
+        isNotValid: complement ? true : false,
       },
       district: {
         data: district,
-        isValid: district ? true : false,
+        isNotValid: district ? true : false,
       },
       city: {
         data: city,
-        isValid: city ? true : false,
+        isNotValid: city ? true : false,
       },
       state: {
         data: state,
-        isValid: state ? true : false,
+        isNotValid: state ? true : false,
       },
     };
     setInputData(objData);
