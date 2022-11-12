@@ -15,10 +15,10 @@
 ## :hammer_and_wrench: **How to run project**
 
 <p align="center">git clone https://github.com/JulioMacedo0/coffee-delivery.git</p>
-<p align="center">yarn or npm install</p>
-<p align="center">run yarn dev , yarn api</p>
-<p align="center">or if you use npm </p>
-<p align="center">run npm dev , npm api</p>
+<p align="center"> <pre> yarn || npm install </pre> </p>
+<p align="center">and  <pre >npm run dev && npm api || yarn dev && yarn api </pre></p>
+
+
 
 ## :camera: **Photos**
 
