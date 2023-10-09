@@ -1,6 +1,6 @@
 import * as S from "./styles";
 import { Coffee, Package, ShoppingCart, Timer } from "phosphor-react";
-import Intro from "../../../../assets/Intro.svg";
+import Intro from "../../../../../public/images/Intro.svg";
 import { CardInfo } from "./Components/CardInfo/CardInfo";
 
 export const ProductPresentation = () => {

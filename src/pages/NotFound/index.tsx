@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import cat from "../../assets/cat.gif";
+import cat from "../../../public/images//cat.gif";
 export const NotFound = () => {
   return (
     <S.Container>

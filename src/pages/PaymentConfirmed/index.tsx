@@ -1,5 +1,5 @@
 import * as S from "./styles";
-import ilustration from "../../assets/Illustration.svg";
+import ilustration from "../../../public/images/Illustration.svg";
 import { CardInfoDelivery } from "./Components/CardInfoDelivery";
 export const PaymentConfirmed = () => {
   return (
