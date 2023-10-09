@@ -8,7 +8,7 @@ import * as S from "./styles";
 interface CardCoffeProps {
   id: number;
   img: string;
-  tags: [];
+  tags: string[];
   name: string;
   description: string;
   price: string;
