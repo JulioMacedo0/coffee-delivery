@@ -6,7 +6,6 @@ interface CardInfoProps {
 }
 
 export const CardInfo = ({ paragraph, icon, color }: CardInfoProps) => {
-  console.log(color);
   return (
     <S.Container iconColor={color}>
       <span>{icon}</span>
