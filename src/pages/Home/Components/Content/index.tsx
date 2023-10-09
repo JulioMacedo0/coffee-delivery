@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { CardCoffee } from "../CardCoffee";
 import * as S from "./styles";
 import { api } from "../../../../API/api";
+import { coffes } from "../../../../Data/coffes";
 
 interface CoffesProps {
   description: string;
@@ -9,16 +10,18 @@ interface CoffesProps {
   name: string;
   photo: string;
   price: number;
-  tags: [];
+  tags: string[];
 }
 
 export const Content = () => {
   const [Coffes, SetCoffes] = useState<CoffesProps[]>([]);
 
   useEffect(() => {
-    api.get("/products").then((response) => {
-      SetCoffes(response.data);
-    });
+    // api.get("/products").then((response) => {
+    //   SetCoffes(response.data);
+    // });
+
+    SetCoffes(coffes);
   }, []);
 
   return (
